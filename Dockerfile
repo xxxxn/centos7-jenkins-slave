@@ -1,7 +1,8 @@
-FROM centos:centos7 
-MAINTAINER Daniel Menet "membership@sontags.ch"  
+FROM centos:centos7
+MAINTAINER Alexander Naydenko "an@zeppelinen.com"  
   
-RUN rpm -Uhv --force https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
+RUN yum -y install epel-release.noarch
+RUN rpm -Uhv --force http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
 RUN yum -y update  
 RUN yum -y install openssh-server  
